@@ -16,11 +16,6 @@ export default function Card({ user, pagetype }: Props) {
         </div>
     ) : null
 
-    // const emailDisplay = user?.email ? (
-    //     <div className="flex flex-col items-center p-6 bg-white rounded-lg font-bold text-5xl text-black">
-    //         {user?.email}
-    //     </div>
-    // ) : null
 
     const userImage = user?.image ? (
         <Image
@@ -29,14 +24,13 @@ export default function Card({ user, pagetype }: Props) {
             width={200}
             height={200}
             alt={user?.name ?? "Profile Pic"}
-            priority={true}
+            priority={true} 
         />
     ) : null
 
     return (
         <section className="flex flex-col gap-4">
             {greeting}
-            {/* {emailDisplay} */}
             {userImage}
             <p className="text-2xl text-center">{pagetype} Page!</p>
             <p className="text-2xl text-center">Role: {user.role}</p>
