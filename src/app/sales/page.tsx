@@ -7,12 +7,12 @@ export default async function ServerPage() {
     const session = await getServerSession(options)
 
     if (!session) {
-        redirect('/api/auth/signin?callbackUrl=/server')
+        redirect('/api/auth/signin?callbackUrl=/sales')
     }
 
     return (
         <section className="flex flex-col gap-6">
-            <UserCard user={session?.user} pagetype={"Server"} />
+            <UserCard user={session?.user} pagetype={"Sales"} />
         </section>
     )
 

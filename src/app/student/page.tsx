@@ -12,10 +12,10 @@ export default function ClientPage() {
             redirect('/api/auth/signin?callbackUrl=/client')
         }
     })
-
+    if (!session?.user) return
     return (
         <section className="flex flex-col gap-6">
-            <UserCard user={session?.user} pagetype={"Client"} />
+            <UserCard user={session?.user} pagetype={"Student"} />
         </section>
     )
 }
